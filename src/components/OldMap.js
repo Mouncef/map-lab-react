@@ -9,7 +9,7 @@ const AnyReactComponent = ({ text , icon, children}) => <div style={{color: "#22
     {children}
 </div>;
 
-const Map = ({defaultPlace}) => {
+const OldMap = ({defaultPlace}) => {
 
     console.log(defaultPlace)
     const mapOptions = (maps) => {
@@ -55,4 +55,4 @@ const Map = ({defaultPlace}) => {
     );
 }
 
-export default Map;
+export default OldMap;
