@@ -9,17 +9,22 @@ import {Box, Grid} from "@mui/material";
 
 
 const AutoCompleteExample = () => {
-    const ARGENTEUIL_CENTER = [48.939603083218614, 2.2347119850115083];
 
     const [state, setState] = React.useState({
         mapApiLoaded: false,
         mapInstance: null,
         mapApi: null,
+        geocoder: null,
         places: [],
     });
 
 
     const apiHasLoaded = (map, maps) => {
+        // Here were l'api is stored
+
+
+        console.log(map)
+        console.log(maps)
         setState(prev => ({
             ...prev,
             mapApiLoaded: true,
@@ -32,42 +37,26 @@ const AutoCompleteExample = () => {
         setState(prev => ({...prev, places: [place] }));
     };
 
+
+
+
     console.log(state.places)
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container>
-                <Grid item xs={12}>
+                <Grid item xs={3}>
                     {
                         state.mapApiLoaded && (
                             <AutoComplete map={state.mapInstance} mapApi={state.mapApi} addplace={addPlace} />
                         )
                     }
+                </Grid>
+                <Grid item xs={9}>
                     <div style={{ height: '100vh', width: '100%' }}>
                         <GoogleMap
                             defaultZoom={10}
-                            defaultCenter={ARGENTEUIL_CENTER}
-                            bootstrapURLKeys={{
-                                key: process.env.REACT_APP_API_GOOGLE_MAPS_KEY,
-                                libraries: ['places', 'geometry'],
-                            }}
                             yesIWantToUseGoogleMapApiInternals
                             onGoogleApiLoaded={({ map, maps }) => apiHasLoaded(map, maps)}
-                            options={{
-                                panControl: false,
-                                mapTypeControl: false,
-                                scrollwheel: true,
-                                styles: [
-                                    {
-                                        stylers:
-                                            [
-                                                { 'saturation': -100 },
-                                                { 'gamma': 0.8 },
-                                                { 'lightness': 4 },
-                                                { 'visibility': 'on' }
-                                            ]
-                                    }
-                                ]
-                            }}
                         >
                             {!isEmpty(state.places)
                             && state.places.map((place, idx) => (
@@ -80,7 +69,6 @@ const AutoCompleteExample = () => {
                             ))}
                         </GoogleMap>
                     </div>
-
                 </Grid>
             </Grid>
         </Box>

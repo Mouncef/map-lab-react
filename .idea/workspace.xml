@@ -3,21 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="15889cee-be38-4764-b959-b09b7ffaab36" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../google-map-react-examples/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/places.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.old.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AutoComplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GoogleMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Marker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/AutoComplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/InfoWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StyledMarker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/examples/HeatMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/examples/MarkerInfoWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/examples/MarkerInfoWindowGmapsObj.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/examples/SearchBox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../google-map-react-examples/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../google-map-react-examples/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/places.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/places.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OldMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AutoComplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoogleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/AutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/AutoComplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +51,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\jsef-react\src\components" />
       <recent name="D:\projects\jsef-react\public" />
       <recent name="D:\projects\jsef-react" />
     </key>
@@ -67,6 +72,8 @@
       <updated>1674399185440</updated>
       <workItem from="1674399187320" duration="2313000" />
       <workItem from="1674450836196" duration="3194000" />
+      <workItem from="1674538995335" duration="5130000" />
+      <workItem from="1674549058520" duration="1664000" />
     </task>
     <servers />
   </component>

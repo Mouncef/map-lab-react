@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+#standard-search-adresse-input {
+  width: 100%;
+  color: #ffffff;
+}
+
+#standard-search-adresse-input::before {
+  border-bottom: 1px solid rgba(223, 212, 212, 0.88) !important;
+}
+
+
+#standard-search-adresse-input::after {
+
+}
+

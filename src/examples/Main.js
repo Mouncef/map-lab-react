@@ -56,21 +56,23 @@ const Main = () => {
             <Grid container>
                 <Grid item xs={12} style={{height: 1500}}>
                     {!isEmpty(state.places) && (
-                        <GoogleMap
-                            defaultZoom={10}
-                            defaultCenter={ARGENTEUIL_CENTER}
-                            yesIWantToUseGoogleMapApiInternals
-                            onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, state.places)}
-                        >
-                            {state.places.map((place) => (
-                                <Marker
-                                    key={place.id}
-                                    text={place.name}
-                                    lat={place.geometry.location.lat}
-                                    lng={place.geometry.location.lng}
-                                />
-                            ))}
-                        </GoogleMap>
+                        <div style={{ height: '100vh', width: '100%' }}>
+                            <GoogleMap
+                                defaultZoom={10}
+                                yesIWantToUseGoogleMapApiInternals
+                                onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, state.places)}
+                            >
+                                {state.places.map((place) => (
+                                    <Marker
+                                        key={place.id}
+                                        text={place.name}
+                                        lat={place.geometry.location.lat}
+                                        lng={place.geometry.location.lng}
+                                    />
+                                ))}
+                            </GoogleMap>
+                        </div>
+
                     )}
                 </Grid>
             </Grid>
@@ -78,3 +80,5 @@ const Main = () => {
         </Box>
     );
 }
+
+export default Main;

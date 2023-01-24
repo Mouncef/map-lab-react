@@ -11,8 +11,26 @@ const Wrapper = styled.main`
 const GoogleMap = ({ children, ...props }) => (
     <Wrapper>
         <GoogleMapReact
+            defaultCenter={[48.939603083218614, 2.2347119850115083]}
             bootstrapURLKeys={{
                 key: process.env.REACT_APP_API_GOOGLE_MAPS_KEY,
+                libraries: ['places', 'geometry','visualization'],
+            }}
+            options={{
+                panControl: false,
+                mapTypeControl: false,
+                scrollwheel: true,
+                styles: [
+                    {
+                        stylers:
+                            [
+                                { 'saturation': -100 },
+                                { 'gamma': 0.8 },
+                                { 'lightness': 4 },
+                                { 'visibility': 'on' }
+                            ]
+                    }
+                ]
             }}
             {...props}
         >

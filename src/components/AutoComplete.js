@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import Input from '@mui/material/Input';
+import SearchInput from "./SearchInput";
 const Wrapper = styled.div`
   position: relative;
   align-items: center;
@@ -54,16 +55,33 @@ class AutoComplete extends Component {
         this.searchInput.value = '';
     }
 
+    geocode = (request) => {
+        if (this.props.geocoder !== null) {
+
+            this.props.geocoder
+                .geocode(request)
+                .then(response => {
+                    console.log(response);
+
+                    return 'hallo';
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+            ;
+        }
+    }
+
     render() {
         return (
             <Wrapper>
-                <input
-                    ref={(ref) => {
+                <SearchInput
+                    placeholder={"Entrez une adresse"}
+                    inputRef={(ref) => {
                         this.searchInput = ref;
                     }}
-                    type="text"
                     onFocus={this.clearSearchBox}
-                    placeholder="Enter a location"
+                    style={{ color: '#fff'}}
                 />
             </Wrapper>
         );
