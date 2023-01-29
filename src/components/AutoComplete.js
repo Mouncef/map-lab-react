@@ -40,12 +40,15 @@ class AutoComplete extends Component {
         const place = this.autoComplete.getPlace();
 
         if (!place.geometry) return;
-        if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-        } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);
-        }
+
+        // if (place.geometry.viewport) {
+            // map.fitBounds(place.geometry.viewport);
+        // } else {
+        // }
+
+
+        map.setCenter(place.geometry.location);
+        map.setZoom(15);
 
         addplace(place);
         this.searchInput.blur();
@@ -55,22 +58,6 @@ class AutoComplete extends Component {
         this.searchInput.value = '';
     }
 
-    geocode = (request) => {
-        if (this.props.geocoder !== null) {
-
-            this.props.geocoder
-                .geocode(request)
-                .then(response => {
-                    console.log(response);
-
-                    return 'hallo';
-                })
-                .catch(error => {
-                    console.error(error);
-                })
-            ;
-        }
-    }
 
     render() {
         return (

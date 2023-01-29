@@ -17,8 +17,8 @@ const GoogleMap = ({ children, ...props }) => (
                 libraries: ['places', 'geometry','visualization'],
             }}
             options={{
-                panControl: false,
-                mapTypeControl: false,
+                panControl: true,
+                mapTypeControl: true,
                 scrollwheel: true,
                 styles: [
                     {
