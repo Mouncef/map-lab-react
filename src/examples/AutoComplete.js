@@ -33,13 +33,17 @@ const AutoCompleteExample = () => {
 
 
 
-    const addPlace = async (place) => {
-        place.internalId= "My-loaction";
-        const places = await Geocoder.geocode("7Bis avenue de général de gaulle, 95100 Argenteuil");
-        places.push(place)
+    const addPlace = (place) => {
+        if (place.length > 1) {
+            setState(prev => ({...prev, places: place }));
+        } else {
+            const arrPlaces = state.places.slice(0);
+            arrPlaces.push(place)
 
-        // places.push(place)
-        setState(prev => ({...prev, places: places }));
+            // places.push(place)
+            setState(prev => ({...prev, places: arrPlaces }));
+        }
+
     };
 
 
@@ -47,15 +51,15 @@ const AutoCompleteExample = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container>
-                <Grid item md={3} xs={12}>
+                <Grid item md={3} xs={12} style={{padding: 10}}>
                     {
                         state.mapApiLoaded && (
                             <AutoComplete map={state.mapInstance} mapApi={state.mapApi} addplace={addPlace} />
                         )
                     }
                 </Grid>
-                <Grid item md={9} xs={12}>
-                    <div style={{ height: '100vh', width: '100%' }}>
+                <Grid item md={9} xs={12} style={{padding: 2}}>
+                    <div style={{ height: '94.5vh', width: '100%' , padding: 2}}>
                         <GoogleMap
                             defaultZoom={10}
                             yesIWantToUseGoogleMapApiInternals
