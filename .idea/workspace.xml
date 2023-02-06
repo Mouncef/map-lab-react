@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15889cee-be38-4764-b959-b09b7ffaab36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../google-map-react-examples/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InfoWindow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StyledMarker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/HeatMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/MarkerInfoWindow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/MarkerInfoWindowGmapsObj.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/SearchBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../google-map-react-examples/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../google-map-react-examples/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/places.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/places.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AutoComplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoogleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/AutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/AutoComplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,20 +25,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2KgbU6DQ4mAEfUwUXEgCXZKg40z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/projects/jsef-react",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\jsef-react\src\components" />
@@ -73,7 +61,9 @@
       <workItem from="1674399187320" duration="2313000" />
       <workItem from="1674450836196" duration="3194000" />
       <workItem from="1674538995335" duration="5130000" />
-      <workItem from="1674549058520" duration="1664000" />
+      <workItem from="1674549058520" duration="1665000" />
+      <workItem from="1675154213773" duration="647000" />
+      <workItem from="1675709562376" duration="143000" />
     </task>
     <servers />
   </component>
@@ -90,6 +80,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

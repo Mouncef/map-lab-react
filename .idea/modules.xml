@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../google-map-react-examples/.idea/google-map-react-examples.iml" filepath="$PROJECT_DIR$/../google-map-react-examples/.idea/google-map-react-examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" filepath="$PROJECT_DIR$/.idea/jsef_geocoding_react.iml" />
     </modules>
   </component>
