@@ -1,11 +1,12 @@
 import React from "react";
 import isEmpty from 'lodash.isempty';
 
-
 import Marker from "../components/Marker";
 import GoogleMap from "../components/GoogleMap";
 import AutoComplete from "../components/AutoComplete";
 import {Box, Grid} from "@mui/material";
+import {Geocoder} from "../services/Geocoder";
+
 
 
 const AutoCompleteExample = () => {
@@ -14,45 +15,51 @@ const AutoCompleteExample = () => {
         mapApiLoaded: false,
         mapInstance: null,
         mapApi: null,
-        geocoder: null,
         places: [],
     });
 
 
     const apiHasLoaded = (map, maps) => {
         // Here were l'api is stored
-
-
-        console.log(map)
-        console.log(maps)
-        setState(prev => ({
-            ...prev,
+        setState({
+            places: [],
             mapApiLoaded: true,
             mapInstance: map,
-            mapApi: maps,
-        }));
+            mapApi: maps
+        });
     };
+
+
+
+
 
     const addPlace = (place) => {
-        setState(prev => ({...prev, places: [place] }));
+        if (place.length > 1) {
+            setState(prev => ({...prev, places: place }));
+        } else {
+            const arrPlaces = state.places.slice(0);
+            arrPlaces.push(place)
+
+            // places.push(place)
+            setState(prev => ({...prev, places: arrPlaces }));
+        }
+
     };
 
 
 
-
-    console.log(state.places)
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container>
-                <Grid item xs={3}>
+                <Grid item md={3} xs={12} style={{padding: 10}}>
                     {
                         state.mapApiLoaded && (
                             <AutoComplete map={state.mapInstance} mapApi={state.mapApi} addplace={addPlace} />
                         )
                     }
                 </Grid>
-                <Grid item xs={9}>
-                    <div style={{ height: '100vh', width: '100%' }}>
+                <Grid item md={9} xs={12} style={{padding: 2}}>
+                    <div style={{ height: '94.5vh', width: '100%' , padding: 2}}>
                         <GoogleMap
                             defaultZoom={10}
                             yesIWantToUseGoogleMapApiInternals
@@ -62,9 +69,9 @@ const AutoCompleteExample = () => {
                             && state.places.map((place, idx) => (
                                 <Marker
                                     key={idx}
-                                    text={place.name}
-                                    lat={place.geometry.location.lat()}
-                                    lng={place.geometry.location.lng()}
+                                    text={place.name ?? " test"}
+                                    lat={place.internalId ? place.geometry.location.lat() : place.geometry.location.lat}
+                                    lng={place.internalId ? place.geometry.location.lng() : place.geometry.location.lng}
                                 />
                             ))}
                         </GoogleMap>

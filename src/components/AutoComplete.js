@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Input from '@mui/material/Input';
 import SearchInput from "./SearchInput";
+import {Geocoder} from "../services/Geocoder";
 const Wrapper = styled.div`
   position: relative;
   align-items: center;
@@ -36,18 +37,33 @@ class AutoComplete extends Component {
         mapApi.event.clearInstanceListeners(this.searchInput);
     }
 
-    onPlaceChanged = ({ map, addplace } = this.props) => {
+    onPlaceChanged = async ({ map, addplace } = this.props) => {
+        const places = [];
         const place = this.autoComplete.getPlace();
 
         if (!place.geometry) return;
-        if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-        } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);
+        places.push(place);
+        // if (place.geometry.viewport) {
+            // map.fitBounds(place.geometry.viewport);
+        // } else {
+        // }
+
+
+
+        map.setCenter(place.geometry.location);
+        map.setZoom(15);
+
+
+        place.internalId= "My-loaction";
+
+
+        const placesNear = await Geocoder.geocode("7Bis avenue de général de gaulle, 95100 Argenteuil");
+        if (placesNear.length > 0) {
+            placesNear.map(place => places.push(place))
         }
 
-        addplace(place);
+
+        addplace(places);
         this.searchInput.blur();
     };
 
@@ -55,22 +71,6 @@ class AutoComplete extends Component {
         this.searchInput.value = '';
     }
 
-    geocode = (request) => {
-        if (this.props.geocoder !== null) {
-
-            this.props.geocoder
-                .geocode(request)
-                .then(response => {
-                    console.log(response);
-
-                    return 'hallo';
-                })
-                .catch(error => {
-                    console.error(error);
-                })
-            ;
-        }
-    }
 
     render() {
         return (
