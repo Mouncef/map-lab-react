@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Input from '@mui/material/Input';
 import SearchInput from "./SearchInput";
 import {Geocoder} from "../services/Geocoder";
+import Coords from "../models/Coords";
 const Wrapper = styled.div`
   position: relative;
   align-items: center;
@@ -37,7 +38,13 @@ class AutoComplete extends Component {
         mapApi.event.clearInstanceListeners(this.searchInput);
     }
 
-    onPlaceChanged = async ({ map, addplace } = this.props) => {
+
+    getAddresseCoords = async (address) => {
+        const result = await Geocoder.geocode(address);
+        return await result[0];
+
+    }
+    onPlaceChanged = ({ map, addplace, coachs } = this.props) => {
         const places = [];
         const place = this.autoComplete.getPlace();
 
@@ -57,12 +64,44 @@ class AutoComplete extends Component {
         place.internalId= "My-loaction";
 
 
-        const placesNear = await Geocoder.geocode("7Bis avenue de général de gaulle, 95100 Argenteuil");
-        if (placesNear.length > 0) {
-            placesNear.map(place => places.push(place))
+        if (coachs.length > 0) {
+
+            let coords = new Coords(
+                place.geometry.location.lat(),
+                place.geometry.location.lng(),
+                'Mouncef',
+                'client',
+                place.formatted_address
+            );
+            // console.log(coords);
+
+
+            coachs.map((placeNear, idx) => {
+
+
+                let coords2 = new Coords(
+                    placeNear.geometry.location.lat,
+                    placeNear.geometry.location.lng,
+                    'Entraineur '+ idx,
+                    'Musculation',
+                    placeNear.formatted_address
+                )
+
+                // console.log(coords2)
+
+
+
+                const distance = Geocoder.getDistanceFromLatLonInKm(coords, coords2);
+
+                // console.log(distance + ' km')
+
+                if (distance < 10) {
+                    places.push(placeNear)
+                }
+            })
         }
 
-
+        console.log(places)
         addplace(places);
         this.searchInput.blur();
     };

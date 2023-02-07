@@ -5,7 +5,6 @@ import Marker from "../components/Marker";
 import GoogleMap from "../components/GoogleMap";
 import AutoComplete from "../components/AutoComplete";
 import {Box, Grid} from "@mui/material";
-import {Geocoder} from "../services/Geocoder";
 
 
 
@@ -18,7 +17,6 @@ const AutoCompleteExample = () => {
         places: [],
     });
 
-
     const apiHasLoaded = (map, maps) => {
         // Here were l'api is stored
         setState({
@@ -29,24 +27,19 @@ const AutoCompleteExample = () => {
         });
     };
 
-
-
-
-
     const addPlace = (place) => {
         if (place.length > 1) {
-            setState(prev => ({...prev, places: place }));
+            setState(prev => ({
+                ...prev,
+                places: place
+            }));
         } else {
             const arrPlaces = state.places.slice(0);
             arrPlaces.push(place)
-
             // places.push(place)
             setState(prev => ({...prev, places: arrPlaces }));
         }
-
     };
-
-
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -80,6 +73,6 @@ const AutoCompleteExample = () => {
             </Grid>
         </Box>
     )
-}
+};
 
 export default AutoCompleteExample
